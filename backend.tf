@@ -1,6 +1,6 @@
 terraform {
   backend s3{
-    bucket = "terra-cloud-jenkins"
+    bucket = "californiabucket"
     key = "remote.tfstate"
     region = "ap-south-1"
   }
