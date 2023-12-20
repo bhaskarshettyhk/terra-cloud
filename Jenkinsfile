@@ -28,7 +28,8 @@ pipeline {
                         dir("terraform")
                         {
                             sh("""
-                                git clone "https://github.com/Tejasks16/terra-cloud.git"
+                                rm -rf terra-cloud
+                                git clone "https://github.com/naidunaveen/terra-cloud.git"
                              """)
                         }
                     }
@@ -56,7 +57,7 @@ pipeline {
                    equals expected: true, actual: params.autoApprove
                }
                not {
-                    equals expected: true, actual: params.destroy
+                    equals expected: false, actual: params.destroy
                 }
            }
            steps {
